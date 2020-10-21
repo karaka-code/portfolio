@@ -20,7 +20,7 @@ const FeedBackPage = () => {
     const sendFeedback = (e) => {
         e.preventDefault()
         axios.post("api/feedback/", {
-            text, userId: user.userId
+            text, userId: user.userId, name: user.name
         })
             .then((response) => {
                 console.log(response)
@@ -52,9 +52,9 @@ const FeedBackPage = () => {
                     {feedbacks.length !== 0 && feedbacks.map(item => {
                         return (
                             <li key={item._id} className="feedback">
-                                <p>User: {item.user}</p>
+                                <p>User: {item.name}</p>
                                 <p>Text: {item.text}</p>
-                                <p>Time: {item.time}</p>
+                                <p className="time">{item.time}</p>
                             </li>
                         )
                     })}

@@ -10,7 +10,7 @@ router.post(
     async (req, res) => {
         try {
 
-            const {text, userId} = req.body
+            const {text, userId, name} = req.body
             console.log(req.body)
             const nDate = new Date().toLocaleString('en-US', {
                 timeZone: 'Europe/Kiev'
@@ -23,7 +23,7 @@ router.post(
             }
 
             const f = new FeedBack({
-                text, time: nDate, user: userId
+                text, time: nDate, user: userId, name
             })
 
 
