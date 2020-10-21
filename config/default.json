@@ -1,0 +1,6 @@
+{
+    "port": 5000,
+    "jwtSecret": "grasseWeb",
+    "mongoUri": "mongodb+srv://vladyslav:yaromiyfr1@cluster0.jycab.mongodb.net/<grasseparfum>?retryWrites=true&w=majority",
+    "baseUrl": "http://localhost:3000"
+  }
