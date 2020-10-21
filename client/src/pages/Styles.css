@@ -1,0 +1,23 @@
+.container {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+.form {
+    width: 50%;
+}
+
+.feedbacks {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: 150px;
+}
+
+.feedback {
+    color: white;
+    background-color: #007bff;
+    padding: 20px;
+    margin: 20px 0;
+}
