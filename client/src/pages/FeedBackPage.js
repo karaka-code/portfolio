@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
 import {Button, Form} from "react-bootstrap";
-import "./Styles.css"
 import axios from "axios"
 import {useSelector} from "react-redux";
+import "./FeedBackPage.css"
 
 
 const FeedBackPage = () => {
@@ -48,17 +48,17 @@ const FeedBackPage = () => {
             </Form>
             <div className="feedbacks">
                 <p>Feedbacks: </p>
-                <ul>
-                    {feedbacks.length !== 0 && feedbacks.map(item => {
+                <div>
+                    {feedbacks.length !== 0 ? feedbacks.map(item => {
                         return (
-                            <li key={item._id} className="feedback">
+                            <div key={item._id} className="feedback">
                                 <p>User: {item.name}</p>
                                 <p>Text: {item.text}</p>
                                 <p className="time">{item.time}</p>
-                            </li>
+                            </div>
                         )
-                    })}
-                </ul>
+                    }) : <p>No feedbacks</p>}
+                </div>
             </div>
         </div>
     )

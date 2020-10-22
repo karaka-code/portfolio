@@ -1,0 +1,68 @@
+.home {
+    justify-content: space-around;
+}
+
+.tabs {
+    display: flex;
+    cursor: pointer;
+    flex-direction: row;
+    list-style: none;
+}
+
+.container-left {
+    width: 50%;
+}
+
+.container-right {
+    width: 50%;
+}
+
+.medias {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.contact {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+ul li {
+    display: inline;
+    text-align: center;
+    cursor: pointer;
+}
+
+.tab {
+    display: inline-block;
+    width: 25%;
+    font-size: 23px;
+    margin: 0;
+    text-decoration: none;
+    color: #333;
+}
+
+.two {
+    margin-left: 90px;
+}
+
+
+hr .selected {
+    margin: 0;
+}
+
+.unselected {
+    margin-left: 27.5%;
+}
+
+hr {
+    height: .25rem;
+    width: 25%;
+    margin: 0;
+    background: tomato;
+    border-top: 5px solid rgba(0,0,0,.1) !important;
+    transition: .3s ease-in-out;
+}
