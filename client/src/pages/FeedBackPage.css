@@ -49,3 +49,10 @@ body::-webkit-scrollbar-thumb {
     justify-content: flex-end;
     margin: 0;
 }
+
+
+@media screen and (max-width: 1600px) {
+    .feedbacks {
+        height: 400px;
+    }
+}

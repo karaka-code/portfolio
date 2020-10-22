@@ -27,17 +27,19 @@ const HomePage = () => {
                         <p>-- Main: React/Redux, JavaScript, HTML & CSS,</p>
                         <p>-- Additional: MaterialUI, Bootstrap</p>
 
-                        <p>Backend stack:</p>
+                        {/* <p>Backend stack:</p>
                         <p>-- NodeJS, Express</p>
 
                         <p>Database layer:</p>
                         <p>-- MongoDB</p>
 
                         <p>Version Control System:</p>
-                        <p>-- Git</p>
+                        <p>-- Git</p> */}
                     </div>
                     : <div>
                         <p>Online shop website: <a href="https://yva.com.ua/" target="_blank">yva.com.ua</a></p>
+                        <p>More on my github: <a href="https://github.com/karaka-code" target="_blank"><GitHubIcon
+                            style={{fontSize: 28}}/></a></p>
                     </div>
                 }
             </div>
@@ -48,8 +50,6 @@ const HomePage = () => {
                         <a href="https://www.instagram.com/ulceora/?hl=en" target="_blank"><InstagramIcon
                             style={{fontSize: 28}}/></a>
                         <a href="https://www.linkedin.com/in/vladyslav-yaromiy-48b4b7198/" target="_blank"><LinkedInIcon
-                            style={{fontSize: 28}}/></a>
-                        <a href="https://github.com/karaka-code" target="_blank"><GitHubIcon
                             style={{fontSize: 28}}/></a>
                     </div>
                 </div>
