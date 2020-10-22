@@ -26,7 +26,7 @@ const Navigation = () => {
     return (
         <Navbar bg="dark" variant="dark">
             <Navbar.Brand><Link style={{color: "white"}} to="/">Home</Link></Navbar.Brand>
-            <Navbar.Brand><Link style={{color: "white"}} to="/feedback">FeedBack</Link></Navbar.Brand>
+            <Navbar.Brand><Link style={{color: "white"}} to="/feedback">Feedback</Link></Navbar.Brand>
             <Nav className="ml-auto">
                 {
                     user !== null
