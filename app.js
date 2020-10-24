@@ -10,7 +10,6 @@ app.use('/static', express.static('static'))
 
 app.use(express.json({extended: true}))
 app.use('/api/feedBack', require('./routes/feedBack.route'))
-app.use('/api/contact', require('./routes/contact.route'))
 app.use('/api/auth', require('./routes/authentication.route'))
 
 if(process.env.NODE_ENV === 'production') {

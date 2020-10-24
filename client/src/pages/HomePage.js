@@ -23,18 +23,20 @@ const HomePage = () => {
                 {selected
                     ? <div>
                         <p style={{fontSize: 16, fontWeight: "bold"}}>My tech skills: </p>
-                        <p>Frontend stack:</p>
-                        <p>-- Main: React/Redux, JavaScript, HTML & CSS,</p>
-                        <p>-- Additional: MaterialUI, Bootstrap</p>
-
-                        {/* <p>Backend stack:</p>
-                        <p>-- NodeJS, Express</p>
-
-                        <p>Database layer:</p>
-                        <p>-- MongoDB</p>
-
-                        <p>Version Control System:</p>
-                        <p>-- Git</p> */}
+                        <div className="skill-tables">
+                            <div className="skill-list">
+                                <p>Frontend stack:</p>
+                                <p>-- Main: React/Redux,</p>
+                                <p>JavaScript HTML & CSS,</p>
+                                <p>-- Additional: MaterialUI, Bootstrap</p>
+                            </div>
+                            <div className="skill-list">
+                                <p>Backend stack:</p>
+                                <p>-- NodeJS, Express</p>
+                                <p>Database layer:</p>
+                                <p>-- MongoDB</p>
+                            </div>
+                        </div>
                     </div>
                     : <div>
                         <p>Online shop website: <a href="https://yva.com.ua/" target="_blank">yva.com.ua</a></p>

@@ -17,6 +17,17 @@
     width: 50%;
 }
 
+.skill-tables {
+    display: flex;
+    justify-content: space-between;
+}
+
+.skill-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .medias {
     display: flex;
     justify-content: center;
