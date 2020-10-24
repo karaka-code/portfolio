@@ -2,12 +2,17 @@ import React, {useEffect, useState} from "react";
 import {Button, Form} from "react-bootstrap";
 import axios from "axios"
 import {useSelector} from "react-redux";
+import {Modal} from "react-bootstrap";
 import "./FeedBackPage.css"
 
 
 const FeedBackPage = () => {
     const [text, setText] = useState('')
     const [feedbacks, setFeedbacks] = useState([])
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     const user = useSelector(state => state.user.currentUser)
 
     useEffect(() => {
@@ -19,6 +24,10 @@ const FeedBackPage = () => {
 
     const sendFeedback = (e) => {
         e.preventDefault()
+        if (user === null) {
+            handleShow()
+            return
+        }
         axios.post("api/feedback/", {
             text, userId: user.userId, name: user.name
         })
@@ -32,6 +41,14 @@ const FeedBackPage = () => {
 
     return (
         <div className="container">
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Body>You need to login to leave feedbacks</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="primary" onClick={handleClose}>
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal>
             <Form className="form">
                 <Form.Group controlId="exampleForm.ControlTextarea1">
                     <Form.Label>Leave your feedback here.</Form.Label>
