@@ -7,15 +7,17 @@ import "./App.css"
 
 function App() {
     return (
-        <div className="app">
-            <Router>
-                <Navigation/>
-                <Switch>
-                    <Route path="/" exact component={HomePage}/>
-                    <Route path="/feedback" exact component={FeedBackPage}/>
-                    <Redirect to="/"/>
-                </Switch>
-            </Router>
+        <div className="bg">
+            <div className="app">
+                <Router>
+                    <Navigation/>
+                    <Switch>
+                        <Route path="/" exact component={HomePage}/>
+                        <Route path="/feedback" exact component={FeedBackPage}/>
+                        <Redirect to="/"/>
+                    </Switch>
+                </Router>
+            </div>
         </div>
     );
 }

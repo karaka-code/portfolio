@@ -3,6 +3,14 @@
     padding: 0;
 }
 
+.bg {
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("../src/images/colorful-background.jpg");
+    background-position: center;
+}
+
 .app {
     font-family: 'Ubuntu', sans-serif;
     width: 1200px;
