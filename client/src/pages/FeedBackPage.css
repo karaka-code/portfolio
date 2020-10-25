@@ -1,58 +1,56 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-    margin-top: 50px;
-    display: flex;
-    flex-direction: row;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
 }
 
 .form {
-    width: 50%;
+  width: 50%;
 }
 
 .feedbacks {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    margin-left: 150px;
-    height: 600px;
-    overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-left: 150px;
+  height: 600px;
 }
 
 .feedback {
-    color: white;
-    background-color: #007bff;
-    padding: 20px;
-    margin: 20px 10px;
+  color: white;
+  background-color: #007bff;
+  padding: 20px;
+  margin: 20px 10px;
 }
 
 body::-webkit-scrollbar {
-    width: 1em;
+  width: 1em;
 }
 
 body::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: darkgrey;
-    outline: 1px solid slategrey;
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
 }
 
 .time {
-    color: #3d3535;
-    font-size: 14px;
-    display: flex;
-    justify-content: flex-end;
-    margin: 0;
+  color: #3d3535;
+  font-size: 14px;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
 }
 
-
 @media screen and (max-width: 1600px) {
-    .feedbacks {
-        height: 400px;
-    }
+  .feedbacks {
+    height: 400px;
+  }
 }
