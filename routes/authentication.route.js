@@ -11,9 +11,8 @@ const router = Router()
 router.post(
     '/register',
     [
-        check('name', 'Incorrect email').isLength({min: 3, max: 20}),
-        check('email', 'Incorrect email').isEmail(),
-        check('password', "Wrong password").isLength({min: 6})
+        check('name', 'Incorrect name').isLength({min: 3, max: 20}),
+        check('email', 'Incorrect email').isEmail()
     ],
     async (req, res) => {
         try {
