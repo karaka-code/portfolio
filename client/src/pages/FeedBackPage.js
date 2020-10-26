@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import { Button, Form } from "react-bootstrap";
 import axios from "axios";
 import { useSelector } from "react-redux";
@@ -9,16 +9,29 @@ const FeedBackPage = () => {
   const [text, setText] = useState("");
   const [feedbacks, setFeedbacks] = useState([]);
   const [show, setShow] = useState(false);
+  const [sortedFeedbacks, setSortedFeedBacks] = useState([])
+  const [isOldest, setIsOldest] = useState(true)
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const user = useSelector((state) => state.user.currentUser);
 
+  const sortByDate = useCallback(() => {
+    let sorted = feedbacks.reverse()
+    setSortedFeedBacks(sorted.sort((a,b)=> a.time - b.time))
+  }, [feedbacks, sortedFeedbacks])
+
+
   useEffect(() => {
-    axios.get("api/feedback/").then((response) => {
+    axios.get("api/feedback/")
+        .then((response) => {
       setFeedbacks(response.data);
     });
   }, []);
+
+  useEffect(() => {
+    sortByDate()
+  }, [sortByDate])
 
   const sendFeedback = (e) => {
     e.preventDefault();
@@ -70,8 +83,8 @@ const FeedBackPage = () => {
       <div className="feedbacks">
         <p>Feedbacks: </p>
         <div style={{ overflow: "scroll" }}>
-          {feedbacks.length !== 0 ? (
-            feedbacks.map((item) => {
+          {sortedFeedbacks.length !== 0 ? (
+              sortedFeedbacks.map((item) => {
               return (
                 <div key={item._id} className="feedback">
                   <p>User: {item.name}</p>
