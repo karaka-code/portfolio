@@ -59,6 +59,9 @@ const HomePage = () => {
                     <h4>Contact me: </h4>
                     <span style={{marginLeft: 5}}> vlad.yaromiy@gmail.com</span>
                 </div>
+                <div className="liveChat">
+                    <h4>Live chat with me</h4>
+                </div>
             </div>
         </div>
     )

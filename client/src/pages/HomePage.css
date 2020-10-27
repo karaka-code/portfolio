@@ -15,6 +15,9 @@
 
 .container-right {
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
 }
 
 .skill-tables {
@@ -31,7 +34,6 @@
 .medias {
     display: flex;
     justify-content: center;
-    margin-bottom: 15px;
 }
 
 .contact {
@@ -39,6 +41,7 @@
     display: flex;
     flex-direction: row;
     align-items: baseline;
+    margin: 50px 0;
 }
 
 ul li {
@@ -76,4 +79,9 @@ hr {
     background: tomato;
     border-top: 5px solid rgba(0,0,0,.1) !important;
     transition: .3s ease-in-out;
+}
+
+.liveChat {
+    display: flex;
+    justify-content: center;
 }
