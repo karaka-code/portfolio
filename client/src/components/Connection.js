@@ -9,6 +9,7 @@ export const Registration = ({handleClose, show}) => {
     const [form, setForm] = useState({
         name: '', email: '', password: ''
     })
+    const dispatch = useDispatch()
 
     const [response, setResponse] = useState('')
 
@@ -27,6 +28,7 @@ export const Registration = ({handleClose, show}) => {
         })
             .then((response) => {
                 setResponse(response.data.message)
+                dispatch(logInUser(response.data))
             }, (error) => {
                 setResponse(error.response.data.message)
             })

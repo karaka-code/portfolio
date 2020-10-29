@@ -8,31 +8,25 @@ const FeedBackPage = () => {
     const [text, setText] = useState("");
     const [feedbacks, setFeedbacks] = useState([]);
     const [show, setShow] = useState(false);
-    // const [sortedFeedbacks, setSortedFeedBacks] = useState([])
-    const [isOldest, setIsOldest] = useState(true)
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const user = useSelector((state) => state.user.currentUser);
 
-    // const sortByDate = useCallback(() => {
-    //   let sorted = feedbacks.reverse()
-    //   setSortedFeedBacks(sorted.sort((a,b)=> a.time - b.time))
-    // }, [feedbacks, sortedFeedbacks])
 
+   const fetchData = () => {
+       axios.get("api/feedback/")
+           .then((response) => {
+               const reversed = response.data.reverse()
+               const sortedData = reversed.sort((a, b) => a.time - b.time)
+               setFeedbacks(sortedData);
+           });
+   }
 
     useEffect(() => {
-        axios.get("api/feedback/")
-            .then((response) => {
-                const reversed = response.data.reverse()
-                const sortedData = reversed.sort((a, b) => a.time - b.time)
-                setFeedbacks(sortedData);
-            });
+        fetchData()
     }, []);
 
-    // useEffect(() => {
-    //   sortByDate()
-    // }, [sortByDate])
 
     const sendFeedback = (e) => {
         e.preventDefault();
@@ -48,7 +42,7 @@ const FeedBackPage = () => {
             })
             .then(
                 (response) => {
-                    console.log(response);
+                    fetchData()
                 },
                 (error) => {
                     console.log(error);
@@ -67,7 +61,7 @@ const FeedBackPage = () => {
                     </Button>
                 </Modal.Footer>
             </Modal>
-            <Form className="form">
+            <Form className="form" onSubmit={sendFeedback}>
                 <Form.Group controlId="exampleForm.ControlTextarea1">
                     <Form.Label>Leave your feedback here.</Form.Label>
                     <Form.Control
@@ -77,7 +71,7 @@ const FeedBackPage = () => {
                         rows={10}
                     />
                 </Form.Group>
-                <Button variant="primary" type="submit" onClick={sendFeedback}>
+                <Button variant="primary" type="submit" >
                     Leave
                 </Button>
             </Form>
