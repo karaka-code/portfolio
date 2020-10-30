@@ -81,7 +81,3 @@ hr {
     transition: .3s ease-in-out;
 }
 
-.liveChat {
-    display: flex;
-    justify-content: center;
-}

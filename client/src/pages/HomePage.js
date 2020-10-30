@@ -40,7 +40,7 @@ const HomePage = () => {
                     </div>
                     : <div>
                         <p>Online shop website: <a href="https://yva.com.ua/" target="_blank">yva.com.ua</a></p>
-                        <p>More on my github: <a href="https://github.com/karaka-code" target="_blank"><GitHubIcon
+                        <p>More on my github: <a href="https://github.com/asce-del" target="_blank"><GitHubIcon
                             style={{fontSize: 28}}/></a></p>
                     </div>
                 }
@@ -58,9 +58,6 @@ const HomePage = () => {
                 <div className="contact">
                     <h4>Contact me: </h4>
                     <span style={{marginLeft: 5}}> vlad.yaromiy@gmail.com</span>
-                </div>
-                <div className="liveChat">
-                    <h4>Live chat with me</h4>
                 </div>
             </div>
         </div>
