@@ -7,11 +7,15 @@
 }
 
 .chat-area {
+    overflow-y: auto;
     height: 300px;
     border: 1px solid #ced4da;
     border-radius: .25rem;
     color: #007bff;
     margin-bottom: 10px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
 }
 
 @media screen and (max-width: 1300px) {

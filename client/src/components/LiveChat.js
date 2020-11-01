@@ -1,9 +1,12 @@
-import React, {useEffect, useState} from "react"
+import React, {useEffect, useRef, useState} from "react"
 import "./LiveChat.css"
 import {Button, Form} from "react-bootstrap";
 import io from "socket.io-client"
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import moment from "moment"
+import {afterPostMessage, getChats} from "../store/chat/actions";
+import ChatCard from "./ChatCard";
+import AlertModal from "./AlertModal";
 
 let socket;
 const server = 'http://localhost:5000';
@@ -11,41 +14,69 @@ const server = 'http://localhost:5000';
 
 const LiveChat = () => {
 
+    const dispatch = useDispatch()
+    const chats = useSelector((state) => state.chat.chats)
     const user = useSelector((state) => state.user.currentUser);
     const [message, setMessage] = useState('')
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    const messagesEndRef = useRef(null)
+
+    const scrollToBottom = () => {
+        messagesEndRef.current.scrollIntoView({ behavior: "smooth" })
+    }
+
+    useEffect(scrollToBottom, [chats]);
 
 
     useEffect(() => {
+        dispatch(getChats())
         socket = io(server);
 
+
         socket.on("Output Chat Message", messageFromServer => {
-            console.log(messageFromServer)
+            dispatch(afterPostMessage(messageFromServer))
         })
+
     }, [])
 
-    const sendMsg = (e) => {
-            e.preventDefault()
-            let userId = user.userId
-            let userName = user.name
-            let chatMsg = message
-            let nowTime = moment()
-            let type = "Image"
 
-            socket.emit("Input Chat Message", {
-                chatMsg,
-                userId,
-                userName,
-                nowTime,
-                type
-            })
-            setMessage('')
+    const sendMsg = (e) => {
+        e.preventDefault()
+        if (user === null) {
+            handleShow();
+            return;
+        }
+        let userId = user.userId
+        let userName = user.name
+        let chatMsg = message
+        let nowTime = moment()
+        let type = "Text"
+
+        socket.emit("Input Chat Message", {
+            chatMsg,
+            userId,
+            userName,
+            nowTime,
+            type
+        })
+        setMessage('')
     }
 
 
     return (
         <div className="chat">
             <h4>Live chat with me</h4>
-            <div className="chat-area"></div>
+            <AlertModal show={show} handleClose={handleClose} text={"to chat"}/>
+            <div className="chat-area">
+                {chats  && chats.map(chat => {
+                    return <ChatCard key={chat._id} {...chat} />
+                })}
+                <div ref={messagesEndRef} />
+            </div>
             <Form onSubmit={sendMsg}>
                 <Form.Group controlId="exampleForm.ControlTextarea1">
                     <Form.Control

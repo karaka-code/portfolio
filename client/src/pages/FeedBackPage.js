@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from "react";
-import {Button, Form, Modal} from "react-bootstrap";
+import {Button, Form} from "react-bootstrap";
 import axios from "axios";
 import {useSelector} from "react-redux";
 import "./FeedBackPage.css";
+import AlertModal from "../components/AlertModal";
 
 const FeedBackPage = () => {
     const [text, setText] = useState("");
@@ -53,14 +54,7 @@ const FeedBackPage = () => {
 
     return (
         <div className="container">
-            <Modal show={show} onHide={handleClose}>
-                <Modal.Body>You need to login to leave feedbacks</Modal.Body>
-                <Modal.Footer>
-                    <Button variant="primary" onClick={handleClose}>
-                        Close
-                    </Button>
-                </Modal.Footer>
-            </Modal>
+            <AlertModal show={show} handleClose={handleClose} text={"to leave feedbacks"}/>
             <Form className="form" onSubmit={sendFeedback}>
                 <Form.Group controlId="exampleForm.ControlTextarea1">
                     <Form.Label>Leave your feedback here.</Form.Label>
@@ -77,7 +71,7 @@ const FeedBackPage = () => {
             </Form>
             <div className="feedbacks">
                 <p>Feedbacks: </p>
-                <div style={{overflow: "scroll"}}>
+                <div className="feedContent">
                     {feedbacks.length !== 0 ? (
                         feedbacks.map((item) => {
                             return (
