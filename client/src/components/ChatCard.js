@@ -2,7 +2,7 @@ import React from "react";
 import "./ChatCard.css"
 
 const ChatCard = (props) => {
-    
+
     return (
         <div className="message">
             <p className="time">{props.sender.name}</p>
