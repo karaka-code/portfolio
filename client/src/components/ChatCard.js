@@ -1,14 +1,23 @@
 import React from "react";
 import "./ChatCard.css"
 
-const ChatCard = (props) => {
+const ChatCard = ({chat}) => {
+
+    console.log(chat)
 
     return (
-        <div className="message">
-            <p className="time">{props.sender.name}</p>
-            <p>{props.message}</p>
-            <p className="time">{props.time}</p>
-        </div>
+        <>
+            {chat
+                ? <div className="message">
+                    {/*<p>{chat.sender.name}</p>*/}
+                    <p>{chat.message}</p>
+                    <p className="time">{chat.time}</p>
+                </div>
+                : null
+            }
+        </>
+
+
     )
 }
 

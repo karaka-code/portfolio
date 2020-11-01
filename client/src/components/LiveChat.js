@@ -41,7 +41,7 @@ const LiveChat = () => {
             dispatch(afterPostMessage(messageFromServer))
         })
 
-    }, [])
+    }, [dispatch])
 
 
     const sendMsg = (e) => {
@@ -72,8 +72,8 @@ const LiveChat = () => {
             <h4>Live chat with me</h4>
             <AlertModal show={show} handleClose={handleClose} text={"to chat"}/>
             <div className="chat-area">
-                {chats  && chats.map(chat => {
-                    return <ChatCard key={chat._id} {...chat} />
+                {chats && chats.map(chat => {
+                    return <ChatCard key={chat._id} chat={chat} />
                 })}
                 <div ref={messagesEndRef} />
             </div>
