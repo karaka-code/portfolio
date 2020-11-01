@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from "react"
+import React, {useEffect, useState} from "react"
 import "./LiveChat.css"
 import {Button, Form} from "react-bootstrap";
 import io from "socket.io-client"
@@ -17,22 +17,28 @@ const LiveChat = () => {
 
     useEffect(() => {
         socket = io(server);
+
+        socket.on("Output Chat Message", messageFromServer => {
+            console.log(messageFromServer)
+        })
     }, [])
 
     const sendMsg = (e) => {
-        e.preventDefault()
-        let userId = user.userId
-        let userName = user.name
-        let chatMsg = message
-        let nowTime = moment()
+            e.preventDefault()
+            let userId = user.userId
+            let userName = user.name
+            let chatMsg = message
+            let nowTime = moment()
+            let type = "Image"
 
-        socket.emit("Input Chat Msg", {
-            chatMsg,
-            userId,
-            userName,
-            nowTime
-        })
-        setMessage('')
+            socket.emit("Input Chat Message", {
+                chatMsg,
+                userId,
+                userName,
+                nowTime,
+                type
+            })
+            setMessage('')
     }
 
 

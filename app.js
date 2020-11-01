@@ -8,6 +8,8 @@ const server = require("http").createServer(app);
 const io = require("socket.io")(server);
 const config = require("config");
 
+const Chat = require("./models/Chat")
+
 const mongoose = require("mongoose");
 const connect = mongoose.connect(process.env.MONGODB_URI || config.get('mongoUri'), { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('MongoDB Connected...'))
@@ -26,7 +28,26 @@ app.use('/api/auth', require('./routes/authentication.route'))
 io.on("connection", socket => {
 
     socket.on("Input Chat Message", msg => {
+        connect.then(db => {
+            try {
+                let chat = new Chat({
+                    message: msg.chatMsg,
+                    sender: msg.userId,
+                    type: msg.type
+                })
+                chat.save((err, doc) => {
+                    if (err) return json({success: false, err})
 
+                    Chat.find({"_id": doc._id})
+                        .populate("sender")
+                        .exec((err, doc) => {
+                            return io.emit("Output Chat Message", doc)
+                        })
+                })
+            } catch (e) {
+                console.log(e)
+            }
+        })
 
     })
 
