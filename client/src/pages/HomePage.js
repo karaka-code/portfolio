@@ -22,9 +22,9 @@ const HomePage = () => {
                     <hr className={selected ? "selected" : "unselected"}/>
                 </ul>
                 {selected
-                    ? <div>
+                    ? <div style={{height: 250}}>
                         <p style={{fontSize: 16, fontWeight: "bold"}}>My tech skills: </p>
-                        <div className="skill-tables">
+                        <div className="skill-tables" >
                             <div className="skill-list">
                                 <p>Frontend stack:</p>
                                 <p>-- Main: React/Redux,</p>
@@ -39,7 +39,7 @@ const HomePage = () => {
                             </div>
                         </div>
                     </div>
-                    : <div>
+                    : <div style={{height: 250}}>
                         <p>Online shop website: <a href="https://yva.com.ua/" target="_blank">yva.com.ua</a></p>
                         <p>More on my github: <a href="https://github.com/asce-del" target="_blank"><GitHubIcon
                             style={{fontSize: 28}}/></a></p>

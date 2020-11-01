@@ -69,7 +69,7 @@ const LiveChat = () => {
 
     return (
         <div className="chat">
-            <h4>Live chat with me</h4>
+            <h4 style={{textAlign: "center"}}>Live chat with me</h4>
             <AlertModal show={show} handleClose={handleClose} text={"to chat"}/>
             <div className="chat-area">
                 {chats && chats.map(chat => {
