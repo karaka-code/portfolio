@@ -9,8 +9,8 @@ const ChatCard = ({chat}) => {
         <>
             {chat
                 ? <div className="message">
-                    {/*<p>{chat.sender.name}</p>*/}
-                    <p>{chat.message}</p>
+                    <p style={{margin: 0, textAlign: "end"}}>{chat.sender.name}</p>
+                    <p className="text">{chat.message}</p>
                     <p className="time">{chat.time}</p>
                 </div>
                 : null

@@ -51,6 +51,7 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   justify-content: flex-end;
   margin: 0;
+  opacity: 0.6;
 }
 
 @media screen and (max-width: 1600px) {

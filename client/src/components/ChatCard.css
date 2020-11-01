@@ -5,7 +5,11 @@
     margin: 20px 10px;
     border: 1px solid #007bff;
     border-radius: 5%;
-    font-size: 14px;
+    font-size: 16px;
     width: 45%;
     height: 85px;
+}
+
+.text {
+    margin: 5px 0;
 }
