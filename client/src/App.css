@@ -30,10 +30,6 @@
         width: 1000px;
         height: 600px;
     }
-
-    .unselected {
-        margin-left: 34.5%;
-    }
 }
 
 
@@ -67,6 +63,16 @@
         margin-bottom: 35px;
         width: 150%;
     }
+
+    .feedbacks {
+        margin-top: 30px;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .form {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -89,4 +95,5 @@
     .chat {
         width: 102%;
     }
+
 }

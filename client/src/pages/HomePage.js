@@ -16,10 +16,9 @@ const HomePage = () => {
                 <p>Hello , im a full stack web developer from Ukraine</p>
                 <ul>
                     <div className="tabs">
-                        <li className="one" onClick={() => setSelected(true)}><p className="tab">Skills</p></li>
-                        <li className="two" onClick={() => setSelected(false)}><p className="tab">Projects</p></li>
+                        <li className="one" onClick={() => setSelected(true)}>Skills</li>
+                        <li className="two" onClick={() => setSelected(false)}>Projects</li>
                     </div>
-                    <hr className={selected ? "selected" : "unselected"}/>
                 </ul>
                 {selected
                     ? <div style={{height: 250}}>

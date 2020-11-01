@@ -48,6 +48,20 @@ ul li {
     display: inline;
     text-align: center;
     cursor: pointer;
+    font-size: 22px;
+}
+
+li {
+    border: 1px solid black;
+    padding: 15px;
+    transition: 0.3s ease-in-out;
+    border-radius: 5%;
+}
+
+li:hover {
+    background-color: #007bff;
+    border: 1px solid white;
+    color: white;
 }
 
 .tab {
@@ -57,26 +71,5 @@ ul li {
     margin: 0;
     text-decoration: none;
     color: #333;
-}
-
-.two {
-    margin-left: 90px;
-}
-
-
-hr .selected {
-    margin: 0;
-}
-
-.unselected {
-    margin-left: 27.5%;
-}
-
-hr {
-    height: .25rem;
-    width: 25%;
-    margin: 0;
-    background: tomato;
-    transition: .3s ease-in-out;
 }
 
