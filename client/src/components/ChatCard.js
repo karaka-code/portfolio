@@ -3,8 +3,6 @@ import "./ChatCard.css"
 
 const ChatCard = ({chat}) => {
 
-    console.log(chat)
-
     return (
         <>
             {chat
