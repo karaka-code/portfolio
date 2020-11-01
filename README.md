@@ -1,1 +1,1 @@
-My portfolio created on MERN stack technologies. Deployed on https://my-portfolio-vlad.herokuapp.com/.
+My portfolio created on MERN stack technologies. Deployed on http://www.asce.space/.
