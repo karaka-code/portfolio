@@ -9,7 +9,7 @@ import ChatCard from "./ChatCard";
 import AlertModal from "./AlertModal";
 
 let socket;
-const server = 'http://localhost:5000';
+const server = 'http://localhost:5000' || process.env.HOST;
 
 
 const LiveChat = () => {
