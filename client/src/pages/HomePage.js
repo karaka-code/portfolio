@@ -3,6 +3,7 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import "./HomePage.css"
+import LiveChat from "../components/LiveChat";
 
 
 const HomePage = () => {
@@ -59,6 +60,7 @@ const HomePage = () => {
                     <h4>Contact me: </h4>
                     <span style={{marginLeft: 5}}> vlad.yaromiy@gmail.com</span>
                 </div>
+                <LiveChat />
             </div>
         </div>
     )

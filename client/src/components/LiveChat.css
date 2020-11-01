@@ -1,0 +1,15 @@
+.chat {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 75%;
+}
+
+.chat-area {
+    height: 300px;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    color: #007bff;
+    margin-bottom: 10px;
+}
