@@ -82,6 +82,10 @@
         width: 100%;
     }
 
+    .two {
+        margin-left: 40px;
+    }
+
     .chat {
         width: 102%;
     }
