@@ -56,6 +56,7 @@ li {
     padding: 15px;
     transition: 0.3s ease-in-out;
     border-radius: 5%;
+    margin: 0 20px;
 }
 
 li:hover {
