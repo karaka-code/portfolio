@@ -24,7 +24,6 @@ const FeedBackPage = () => {
            });
    }
 
-   console.log(feedbacks)
 
     useEffect(() => {
         fetchData()
