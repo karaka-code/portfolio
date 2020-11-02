@@ -28,7 +28,8 @@ const HomePage = () => {
                                 <p>Frontend stack:</p>
                                 <p>-- Main: React/Redux,</p>
                                 <p>JavaScript HTML & CSS,</p>
-                                <p>-- Additional: MaterialUI, Bootstrap</p>
+                                <p>-- Additional: MaterialUI,</p>
+                                <p>Bootstrap</p>
                             </div>
                             <div className="skill-list">
                                 <p>Backend stack:</p>

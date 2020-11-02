@@ -61,7 +61,6 @@
 
     .chat {
         margin-bottom: 35px;
-        width: 150%;
     }
 
     .feedbacks {
@@ -73,12 +72,6 @@
     .form {
         width: 100%;
     }
-}
-
-@media screen and (max-width: 600px) {
-    .medias {
-        margin-top: 50px;
-    }
 
     .container-right {
         width: 100%;
@@ -88,9 +81,12 @@
         width: 100%;
     }
 
+}
 
-    .chat {
-        width: 102%;
+@media screen and (max-width: 600px) {
+    .medias {
+        margin-top: 50px;
     }
+
 
 }
