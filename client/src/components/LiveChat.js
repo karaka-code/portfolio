@@ -3,13 +3,12 @@ import "./LiveChat.css"
 import {Button, Form} from "react-bootstrap";
 import io from "socket.io-client"
 import {useDispatch, useSelector} from "react-redux";
-import moment from "moment"
 import {afterPostMessage, getChats} from "../store/chat/actions";
 import ChatCard from "./ChatCard";
 import AlertModal from "./AlertModal";
 
 let socket;
-const server = process.env.HOST; // change to 'http://localhost:5000' when on dev mode process.env.HOST prod mode
+const server = 'http://localhost:5000'; // change to 'http://localhost:5000' when on dev mode process.env.HOST prod mode
 
 
 const LiveChat = () => {
@@ -51,17 +50,11 @@ const LiveChat = () => {
             return;
         }
         let userId = user.userId
-        let userName = user.name
         let chatMsg = message
-        let nowTime = moment()
-        let type = "Text"
 
         socket.emit("Input Chat Message", {
             chatMsg,
             userId,
-            userName,
-            nowTime,
-            type
         })
         setMessage('')
     }

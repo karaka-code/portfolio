@@ -24,6 +24,8 @@ const FeedBackPage = () => {
            });
    }
 
+   console.log(feedbacks)
+
     useEffect(() => {
         fetchData()
     }, []);
@@ -39,7 +41,6 @@ const FeedBackPage = () => {
             .post("api/feedback/", {
                 text,
                 userId: user.userId,
-                name: user.name,
             })
             .then(
                 (response) => {
@@ -76,7 +77,7 @@ const FeedBackPage = () => {
                         feedbacks.map((item) => {
                             return (
                                 <div key={item._id} className="feedback">
-                                    <p>User: {item.name}</p>
+                                    <p>User: {item.user.name}</p>
                                     <p>Text: {item.text}</p>
                                     <p className="time">{item.time}</p>
                                 </div>

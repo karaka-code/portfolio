@@ -6,7 +6,7 @@ const moment = require("moment");
 // api/feedBack/
 router.post("/", async (req, res) => {
   try {
-    const { text, userId, name } = req.body;
+    const { text, userId } = req.body;
     console.log(req.body);
     const nDate = new Date().toLocaleString("en-US", {
       timeZone: "Europe/Kiev",
@@ -22,7 +22,6 @@ router.post("/", async (req, res) => {
       text,
       time: nDate,
       user: userId,
-      name,
     });
 
     const savedFeedBack = await f.save();
@@ -36,8 +35,12 @@ router.post("/", async (req, res) => {
 // api/feedBack/
 router.get("/", async (req, res) => {
   try {
-    const f = await FeedBack.find();
-    res.status(200).json(f);
+    FeedBack.find()
+        .populate("user")
+        .exec((err, feedbacks) => {
+          if(err) return res.status(400).send(err)
+          res.status(200).send(feedbacks)
+        })
   } catch (e) {
     console.log(e);
     res.status(500).json({ message: "An error occurred" });

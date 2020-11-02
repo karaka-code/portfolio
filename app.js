@@ -11,6 +11,7 @@ const config = require("config");
 const Chat = require("./models/Chat")
 
 const mongoose = require("mongoose");
+
 const connect = mongoose.connect(process.env.MONGODB_URI || config.get('mongoUri'), {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -37,7 +38,6 @@ io.on("connection", socket => {
                 let chat = new Chat({
                     message: msg.chatMsg,
                     sender: msg.userId,
-                    type: msg.type,
                     time: new Date().toLocaleString("en-US", {
                         timeZone: "Europe/Kiev",
                     })
