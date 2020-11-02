@@ -39,8 +39,8 @@ const HomePage = () => {
                         </div>
                     </div>
                     : <div style={{height: 250}}>
-                        <p>Online shop website: <a href="https://yva.com.ua/" target="_blank">yva.com.ua</a></p>
-                        <p>More on my github: <a href="https://github.com/asce-del" target="_blank"><GitHubIcon
+                        <p>Online shop website: <a rel="noopener noreferrer" href="https://yva.com.ua/" target="_blank">yva.com.ua</a></p>
+                        <p>More on my github: <a rel="noopener noreferrer" href="https://github.com/asce-del" target="_blank"><GitHubIcon
                             style={{fontSize: 28}}/></a></p>
                     </div>
                 }
@@ -49,9 +49,9 @@ const HomePage = () => {
                 <div className="medias">
                     <h4>My media: </h4>
                     <div className="links">
-                        <a href="https://www.instagram.com/ulceora/?hl=en" target="_blank"><InstagramIcon
+                        <a  rel="noopener noreferrer" href="https://www.instagram.com/ulceora/?hl=en" target="_blank"><InstagramIcon
                             style={{fontSize: 28}}/></a>
-                        <a href="https://www.linkedin.com/in/vladyslav-yaromiy-48b4b7198/" target="_blank"><LinkedInIcon
+                        <a  rel="noopener noreferrer" href="https://www.linkedin.com/in/vladyslav-yaromiy-48b4b7198/" target="_blank"><LinkedInIcon
                             style={{fontSize: 28}}/></a>
                     </div>
                 </div>

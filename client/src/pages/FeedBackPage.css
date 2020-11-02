@@ -47,7 +47,7 @@ body::-webkit-scrollbar-thumb {
 
 .time {
   color: #3d3535;
-  font-size: 14px;
+  font-size: 12px;
   display: flex;
   justify-content: flex-end;
   margin: 0;

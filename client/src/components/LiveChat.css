@@ -18,7 +18,7 @@
     flex-direction: column;
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1600px) {
     .chat-area {
         height: 200px;
     }
