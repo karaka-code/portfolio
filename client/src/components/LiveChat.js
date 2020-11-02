@@ -8,8 +8,14 @@ import ChatCard from "./ChatCard";
 import AlertModal from "./AlertModal";
 
 let socket;
-const server = process.env.HOST; // change to 'http://localhost:5000'
-// when on dev mode process.env.HOST prod mode
+
+let server;
+if (process.env.NODE_ENV === "production") {
+    server = process.env.HOST
+} else server = 'http://localhost:5000'
+
+ // when on dev mode change to 'http://localhost:5000'
+// when on prod mode change to process.env.HOST
 
 
 const LiveChat = () => {
