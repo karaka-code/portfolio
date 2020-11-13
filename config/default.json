@@ -1,6 +1,7 @@
 {
     "port": 5000,
     "jwtSecret": "grasseWeb",
-    "mongoUri": "mongodb+srv://vladyslav:yaromiyfr1@cluster0.jycab.mongodb.net/<dbname>?retryWrites=true&w=majority",
+    "mongoUri": "mongodb+srv://admin:yaromiyfr1@cluster-7bfc36rj.su8qq.mongodb.net/app?retryWrites=true&w=majority",
     "baseUrl": "http://localhost:3000"
-  }
+}
+
